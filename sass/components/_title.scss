@@ -1,0 +1,16 @@
+.title {
+  margin-bottom: 30px;
+  text-align: center;
+  @include font(700, 28px, 1.18, var(--primary-letter-spacing));
+  color: var(--title-text-color);
+  @include desktop {
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  @include font(700, var(--primary-font-size), 1.14, var(--primary-letter-spacing));
+  text-transform: uppercase;
+}

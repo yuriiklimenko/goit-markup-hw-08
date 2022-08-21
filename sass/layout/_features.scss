@@ -1,0 +1,41 @@
+.features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include tablet {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.features__item {
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 90px) / 4);
+  }
+}
+
+.features__thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: #f5f4fa;
+}
+
+.features__title {
+  margin-bottom: 10px;
+  color: var(--title-text-color);
+  @include tablet {
+    text-align: left;
+  }
+}
+
+.features__descr {
+  font-size: var(--primary-font-size);
+  line-height: 1.7;
+  letter-spacing: var(--primary-letter-spacing);
+}

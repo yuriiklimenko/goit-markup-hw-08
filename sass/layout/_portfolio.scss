@@ -1,0 +1,110 @@
+.filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  row-gap: 15px;
+  column-gap: 8px;
+  @include tablet {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  @include desktop {
+    margin-bottom: 50px;
+  }
+}
+
+.filter__btn {
+  min-width: 73px;
+  padding: 6px 22px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: var(--primary-letter-spacing);
+  color: var(--title-text-color);
+  background-color: #f5f4fa;
+  transition: background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function),
+    color 250ms var(--timing-function);
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.gallery__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include tablet {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.gallery__item {
+  transition: box-shadow 250ms var(--timing-function);
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 60px) / 3);
+  }
+}
+
+.gallery__top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+
+  width: 100%;
+  height: 100%;
+  padding: 40px 24px 24px 24px;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.56;
+  letter-spacing: var(--primary-letter-spacing);
+  background-color: rgba(33, 150, 243, 0.9);
+  overflow: auto;
+  transition: transform 250ms var(--timing-function);
+  .gallery__item:hover & {
+    transform: translateY(0);
+  }
+  @include mobile {
+    padding-top: 77px;
+  }
+  @include tablet {
+    padding-top: 49px;
+  }
+  @include desktop {
+    padding-top: 63px;
+  }
+}
+
+.gallery__wrap {
+  padding: 20px 24px;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.gallery__title {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--title-text-color);
+}
+
+.gallery__text {
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: var(--primary-letter-spacing);
+}

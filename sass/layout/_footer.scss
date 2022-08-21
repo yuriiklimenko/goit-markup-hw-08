@@ -1,0 +1,153 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #2f303a;
+}
+
+.footer__container {
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+  @include desktop {
+    display: flex;
+  }
+}
+
+.footer__wrap {
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+  @include tablet {
+    display: flex;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    justify-content: space-around;
+  }
+}
+
+// footer-start
+.footer__start {
+  @media screen and (max-width: 767.5px) {
+    margin-bottom: 60px;
+  }
+}
+
+.footer__start {
+  @include desktop {
+    margin-right: 93px;
+  }
+}
+
+.address__item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.address__link {
+  font-weight: 400;
+  font-size: var(--primary-font-size);
+  line-height: 1.7;
+  letter-spacing: var(--primary-letter-spacing);
+  color: rgba(255 255 255 / 0.6);
+  transition: color 250ms var(--timing-function);
+  &--white {
+    color: #ffffff;
+  }
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+// footer-center
+.join__text,
+.subscribe__text {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: var(--primary-font-size);
+  line-height: 1.14;
+  letter-spacing: var(--primary-letter-spacing);
+  text-transform: uppercase;
+  color: #ffffff;
+  @include tablet {
+    padding-top: 5px;
+  }
+  @include desktop {
+    padding-top: 12px;
+  }
+}
+
+.join__socials {
+  @include desktop {
+    justify-content: flex-start;
+  }
+}
+
+.join__link {
+  fill: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+// footer-right
+.subscribe {
+  @include desktop {
+    margin-left: auto;
+  }
+}
+
+.subscribe__form {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.subscribe__input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #fff;
+  background-color: transparent;
+  @include tablet {
+    width: 450px;
+  }
+  @include desktop {
+    width: 358px;
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+}
+
+.subscribe__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-width: 200px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background-color: #2196f3;
+  @include desktop {
+    margin: 0;
+  }
+}
+
+.subscribe__btn {
+  &::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    background-image: url('../images/send.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

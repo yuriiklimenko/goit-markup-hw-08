@@ -1,0 +1,201 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  padding: 93px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
+}
+
+.modal {
+  position: relative;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  @media screen and (max-width: 1199px) {
+    margin: 0 auto;
+  }
+  @include mobile {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+
+    max-width: 528px;
+    transform-origin: top left;
+    transition: transform 250ms var(--timing-function);
+  }
+}
+
+.backdrop.is-hidden .modal {
+  @include desktop {
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.5);
+  }
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0;
+  transition: color 250ms var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.modal__close-icon {
+  fill: currentColor;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal__title {
+  margin-bottom: 12px;
+  text-align: center;
+  @include font(700, 20px, 1.15, var(--primary-letter-spacing));
+  color: var(--title-text-color);
+}
+
+//  form
+.form-massage__field {
+  margin-bottom: 10px;
+}
+
+.form-massage__field--end {
+  margin-bottom: 20px;
+}
+
+.form-massage__label {
+  display: block;
+  margin-bottom: 4px;
+  @include font(400, 12px, 1.17, 0.01em);
+}
+
+.form-massage__wrap {
+  position: relative;
+}
+
+.form-massage__input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  font-size: var(--primary-font-size);
+  color: inherit;
+  transition: border-color 250ms var(--timing-function), outline 250ms var(--timing-function);
+  &:focus {
+    outline: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+
+.form-massage__icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms var(--timing-function);
+  .form-massage__input:focus + & {
+    fill: var(--accent-color);
+  }
+}
+
+.form-massage__textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  color: inherit;
+  font-size: var(--primary-font-size);
+  transition: border-color 250ms var(--timing-function), outline 250ms var(--timing-function);
+  &:focus {
+    outline: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
+  }
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.form-massage__privacy {
+  margin-bottom: 30px;
+}
+
+.form-massage__check-label {
+  margin-bottom: 30px;
+  @include font(400, 12px, 1.17, var(--primary-letter-spacing));
+  display: flex;
+  align-items: center;
+  @include desktop {
+    font-size: var(--primary-font-size);
+    line-height: 1.71;
+  }
+}
+
+.form-massage__check-label a {
+  color: var(--accent-color);
+}
+
+.form-massage__check-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  fill: transparent;
+  transition: fill 250ms var(--timing-function), background-color 250ms var(--timing-function);
+  .form-massage__input-check:checked + & {
+    border-color: transparent;
+    background-color: var(--accent-color);
+    fill: #fff;
+  }
+}
+
+.form-massage__modal-btn {
+  min-width: 200px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  @include font(700, 16px, 1.9, 0.06em);
+  color: #ffffff;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}

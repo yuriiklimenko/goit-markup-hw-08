@@ -1,0 +1,19 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-text-color);
+  background-color: #ffffff;
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include desktop {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.link {
+  color: currentColor;
+  text-decoration: none;
+}

@@ -1,0 +1,11 @@
+%burger-line {
+  position: absolute;
+  right: 0;
+
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transition-property: background-color, color, opacity, transform, top, bottom;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
